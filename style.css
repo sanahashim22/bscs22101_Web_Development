@@ -92,7 +92,15 @@ header {
     filter: brightness(0) invert(1);
 }
 
-
+.cert{
+    background-color: #090909;
+    color: #fff;
+    text-align: center;
+    padding: 8px 0px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
 footer {
     background-color: #090909;
     color: #fff;
@@ -253,7 +261,7 @@ border: 4px solid rgb(9, 9, 10);
 }
 
 #skills ul {
-    list-style-type: none; /* Remove bullet points */
+    list-style-type: none; 
     padding: 0;
 }
 
@@ -281,7 +289,63 @@ border: 4px solid rgb(9, 9, 10);
     border-radius: 23px;
     margin-bottom: 5px;
 }
+#education {
+    background-image: url('bg.jpg'); 
+    background-repeat: no-repeat; 
+    background-size: cover;
+    background-position: center; 
+    padding: 70px;
+    color: #fff;   
+}
 
+#education h2 {
+    font-size: 36px;
+    text-align: center;
+    margin-bottom: 20px;
+    padding: 50px;
+}
+
+.education-list img {
+    width: 50px;
+    height: 50px;
+    margin-right: 15px;
+    border-radius: 40%; 
+    border: 3px solid #090909;
+    object-fit: cover;
+
+}
+
+.education-container {
+    display: flex;
+    justify-content: center; 
+    gap: 100px; 
+    flex-wrap: wrap;
+}
+
+.education-list {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 400px;
+    flex: 1;
+}
+
+.education-year {
+    display: flex;
+    align-items: center; 
+    margin-bottom: 15px; 
+}
+
+.education-year h3 {
+    font-size: 18px;
+    margin: 0;
+}
+
+#education p {
+    margin-bottom: 30px;
+}
 
 #projects {
     background-image: url('bg.jpg'); 
@@ -299,7 +363,7 @@ border: 4px solid rgb(9, 9, 10);
 }
 
 #projects ul {
-    list-style-type: none; /* Remove bullet points */
+    list-style-type: none; 
     padding: 0;
     margin: 0;
     display: flex;
@@ -322,3 +386,4 @@ border: 4px solid rgb(9, 9, 10);
     background-color: rgba(255, 255, 255, 0.3);
     transform: scale(1.05);
 }
+
