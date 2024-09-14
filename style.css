@@ -456,3 +456,45 @@ border: 4px solid rgb(9, 9, 10);
     color: #fffdfd;
     margin: 13px 0;
 }
+
+
+
+#courses {
+    background-image: url('bg.jpg'); 
+    background-repeat: no-repeat ; 
+    background-size: cover;
+    background-position: center; 
+    padding: 90px;
+    color: #fff;
+}
+
+#courses h2 {
+    font-size: 36px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#courses ul {
+    list-style-type: none; 
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#courses ul li {
+    font-size: 18px;
+    margin: 10px 0;
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 10px;
+    border-radius: 10px;
+    width: 80%;
+    text-align: center;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+#courses ul li:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+    transform: scale(1.05);
+}
