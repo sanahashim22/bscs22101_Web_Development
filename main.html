@@ -14,17 +14,24 @@
             <img src="logo.png" alt="Logo" class="logo">
             <h1>Portfolio</h1> 
         </div>
-        <nav id="navbar"> 
+        <nav id="navbar">
             <ul>
                 <li><a href="#hero">Home</a></li>
                 <li><a href="#about">About me</a></li>
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#education">Education</a></li>
-                <li><a href="#certifications">Certifications</a></li>
+                <li class="dropdown">
+                    <a href="#certifications" class="dropbtn">Certifications</a>
+                    <div class="dropdown-content">
+                        <a href="award.html">Awards</a>
+                        <a href="certificate.html">Certificates</a>
+                    </div>
+                </li>
                 <li><a href="#courses">Courses</a></li>
             </ul>
         </nav>
+        
     </header>
 
     <section id="hero">
@@ -108,6 +115,32 @@
         <li>Snake game project - 21 Jan 2023 - 12:00 AM</li>
     </ul>
 </section>
+
+<section id="education">
+    <h2>Education</h2>
+
+    <div class="education-container">
+        <div class="education-list">
+            <div class="education-year">
+                <img src="education.png" alt="education" class="education">
+                <h3>2022-2026</h3>
+            </div>
+            <h3>Bachelor of Science in Computer Science</h3>
+            <h4>Information Technology University, Pakistan</h4>
+            <p>Overall grade achieved: CGPA (3.41/4)</p>
+        </div>
+        <div class="education-list">
+            <div class="education-year">
+                <img src="education.png" alt="education" class="education">
+                <h3>2020-2022</h3>
+            </div>
+            <h3>Intermediate in Computer Science</h3>
+            <h4>Superior Group of Colleges, LHR, Pakistan</h4>
+            <p>Overall grade achieved: A+</p>
+        </div>
+    </div>
+</section>
+
 
     <footer>
         &copy; 2024 Sana Hashim. All rights reserved.
