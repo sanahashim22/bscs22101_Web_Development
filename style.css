@@ -523,3 +523,14 @@ video {
     height: auto; /* Maintain aspect ratio */
     border-radius: 20px; /* Rounded corners for a modern look */
 }
+
+
+
+.social-icon {
+    width: 40px; /* Adjust size as needed */
+    height: 38px; /* Adjust size as needed */
+    vertical-align: middle; /* Align with text */
+    margin-left: 10px; /* Space between CV button and LinkedIn icon */
+    border-radius: 15px;
+    border-color: black;
+}
