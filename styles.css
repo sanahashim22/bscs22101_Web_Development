@@ -1,0 +1,495 @@
+
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+h1 {
+    margin: 100px;              
+}
+
+.logo {
+    display: flex;              
+    align-items: center;        
+}
+
+.logo {
+    height: 40px;               
+    margin-right: 10px;        
+}
+body {
+    background-image: url('bg.jpg'); 
+    background-repeat: no-repeat ; 
+    background-size: cover;
+    background-position: center; 
+    font-family: Arial, sans-serif;
+    /* line-height: 1.6; */
+    /* margin: 0;
+    padding: 0; */
+}
+
+section {
+    
+    padding: 20px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #ccc;
+    background: none; 
+    min-height: 100px;
+    
+}
+
+
+header {
+    display: flex;            
+    justify-content: space-between; 
+    align-items: center;        
+    background-color: rgba(68, 68, 68, 0.5);
+    /* background-color: #444444;     */
+    padding: 10px 20px;         
+    color: #fff;  
+    position: sticky; 
+    top: 0; 
+    /* z-index: 1000;    */
+        
+}
+
+
+#navbar ul {
+    list-style-type: none;      
+    margin: 0;
+    padding: 0;
+    display: flex;             
+}
+
+#navbar {
+    display: flex; 
+    align-items: center;  
+    position: sticky;
+    top: 0;
+}
+
+
+#navbar ul li {
+    margin-left: 20px;          
+}
+
+#navbar ul li a {
+    text-decoration: none;      
+    color: #fff;           
+    padding: 5px 10px;          
+    transition: background-color 0.3s ease; 
+}
+
+#navbar ul li a:hover {
+    background-color: #f5efef;     
+    border-radius: 10px;   
+    color: #090909; 
+}
+.logo img {
+    filter: brightness(0) invert(1);
+}
+
+.cert{
+    background-color: #090909;
+    color: #fff;
+    text-align: center;
+    padding: 8px 0px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+footer {
+    background-color: #090909;
+    color: #fff;
+    text-align: center;
+    padding: 7px 0px;
+    bottom: 0;
+    width: 100%;
+}
+
+section {
+    border: none; 
+}
+
+section {
+    margin: 0;
+    padding: 0;
+}
+
+#hero {
+
+    /* background-size: cover;
+    background-position: center; */
+    background-image: url('bg.jpg'); 
+    background-repeat: no-repeat ; 
+    background-size: cover;
+    background-position: center; 
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 20px;
+    padding: 30px 20px; 
+    direction: rtl;
+    text-align: right;
+}
+
+#hero p {
+    color: white;
+    margin: 0;
+    padding: 20px; /* Add padding for better readability */
+    font-size: 24px; /* Adjust font size for readability */
+    background: rgba(80, 76, 76, 0.4); /* Add a semi-transparent background for contrast */
+    border-radius: 10px; /* Rounded corners for a modern look */
+    max-width: 80%; /* Limit width for better readability */
+    text-align: right; /* Ensure text alignment is correct for RTL */
+}
+
+
+
+
+#about {
+    background-image: url('bg.jpg'); 
+    background-repeat: no-repeat ; 
+    background-size: cover;
+    background-position: center; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column; 
+}
+
+.about-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1000px;
+    width: 100%;
+    padding: 50px;
+}
+
+.about-text {
+    flex: 1;
+    padding: 80px;
+    color: white;
+    font-size: 20px;
+}
+
+.image-content {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.image-content img {
+    max-width: 260px; 
+    height: auto;    
+    border-radius: 100px;
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.5); 
+    margin-bottom: 40px;
+    filter: brightness(0.2) invert(1);
+
+}
+
+.btn{
+    padding: 3px 20px;
+    margin: 34px 0px;
+    border: 4px solid rgb(254, 254, 255);
+    color: rgb(247, 242, 242);
+    background-color: rgb(14, 22, 83);
+    font-size: 1.3rem;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.btn:hover{
+background-color: #f7f4f4;     
+border-radius: 10px;   
+color: #1b1616; 
+border: 4px solid rgb(9, 9, 10);
+
+}
+
+
+
+
+
+
+#skills {
+    background-image: url('bg.jpg') ; 
+    background-repeat: no-repeat ; 
+    background-size: cover;
+    background-position: center; 
+    padding: 70px;
+    text-align: center;
+    height: 500px;
+}
+
+#skills h2 {
+    font-size: 46px;
+    color: #ffffff;
+    margin-bottom: 25px;
+}
+
+.skills-container {
+    display: flex;
+    justify-content: center; 
+    gap: 200px; 
+}
+
+.skills-list {
+    flex: 1;
+    text-align: left; 
+    max-width: 320px; 
+}
+
+#skills h3 {
+    font-size: 28px;
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+#skills ul {
+    list-style-type: none; 
+    padding: 0;
+}
+
+#skills ul li {
+    font-size: 18px;
+    color: #ffffff;
+    margin: 15px 0;
+}
+
+#skills ul li:hover {
+    color: #0e0d0d;
+    font-weight: bold;
+    background-color: white;
+    border: 2px solid black;
+    border-radius: 20px;
+    text-align: center;
+}
+
+
+#skills .box{
+    border: 2px solid rgb(255, 249, 249);
+    background-color: rgba(68, 68, 68, 0.4);
+    padding: 12px;
+    margin: -12px 7px;
+    border-radius: 23px;
+    margin-bottom: 5px;
+}
+#education {
+    background-image: url('bg.jpg'); 
+    background-repeat: no-repeat; 
+    background-size: cover;
+    background-position: center; 
+    padding: 70px;
+    color: #fff;   
+}
+
+#education h2 {
+    font-size: 36px;
+    text-align: center;
+    margin-bottom: 20px;
+    padding: 50px;
+}
+
+.education-list img {
+    width: 50px;
+    height: 50px;
+    margin-right: 15px;
+    border-radius: 40%; 
+    border: 3px solid #090909;
+    object-fit: cover;
+
+}
+
+.education-container {
+    display: flex;
+    justify-content: center; 
+    gap: 100px; 
+    flex-wrap: wrap;
+}
+
+.education-list {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 400px;
+    flex: 1;
+}
+
+.education-year {
+    display: flex;
+    align-items: center; 
+    margin-bottom: 15px; 
+}
+
+.education-year h3 {
+    font-size: 18px;
+    margin: 0;
+}
+
+#education p {
+    margin-bottom: 30px;
+}
+
+#projects {
+    background-image: url('bg.jpg'); 
+    background-repeat: no-repeat ; 
+    background-size: cover;
+    background-position: center; 
+    padding: 70px;
+    color: #fff;
+}
+
+#projects h2 {
+    font-size: 36px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#projects ul {
+    list-style-type: none; 
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#projects ul li {
+    font-size: 18px;
+    margin: 10px 0;
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 10px;
+    border-radius: 10px;
+    width: 80%;
+    text-align: center;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+#projects ul li:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+    transform: scale(1.05);
+}
+
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropbtn {
+    background-color: inherit;
+    color: rgb(11, 10, 10);
+    padding: 14px 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: transparent;
+    min-width: 160px;
+    box-shadow: none;
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: white; 
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: rgba(255, 255, 255, 0.1); 
+}
+
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: #555;
+}
+
+
+
+
+#certificates {
+    padding: 30px;
+    margin: 70px auto;
+    text-align: center;
+}
+
+#certificates h2 {
+    color: #fcfcfc;
+    margin-bottom: 30px;
+}
+
+#certificates ul {
+    list-style-type: none; 
+    padding: 0;
+}
+
+#certificates ul li {
+    font-size: 18px;
+    color: #fffdfd;
+    margin: 13px 0;
+}
+
+
+
+#courses {
+    background-image: url('bg.jpg'); 
+    background-repeat: no-repeat ; 
+    background-size: cover;
+    background-position: center; 
+    padding: 90px;
+    color: #fff;
+}
+
+#courses h2 {
+    font-size: 36px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#courses ul {
+    list-style-type: none; 
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#courses ul li {
+    font-size: 18px;
+    margin: 10px 0;
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 10px;
+    border-radius: 10px;
+    width: 80%;
+    text-align: center;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+#courses ul li:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+    transform: scale(1.05);
+}
