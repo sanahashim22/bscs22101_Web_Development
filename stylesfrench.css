@@ -10,7 +10,7 @@ html {
 }
 
 h1 {
-    margin: 100px;              
+    margin: 2px;              
 }
 
 .logo {
@@ -139,6 +139,24 @@ section {
     direction: rtl;
     text-align: left;
 }
+#her {
+
+    /* background-size: cover;
+    background-position: center; */
+    background-image: url('bg.jpg'); 
+    background-repeat: no-repeat ; 
+    background-size: cover;
+    background-position: center; 
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 20px;
+    padding: 30px 20px; 
+    direction: rtl;
+    text-align: left;
+}
 
 #hero p {
     color: white;
@@ -150,8 +168,25 @@ section {
     max-width: 80%; /* Limit width for better readability */
     text-align: left; /* Ensure text alignment is correct for RTL */
 }
+#her p {
+    color: white;
+    margin: 0;
+    padding: 20px; /* Add padding for better readability */
+    font-size: 24px; /* Adjust font size for readability */
+    background: rgba(80, 76, 76, 0.4); /* Add a semi-transparent background for contrast */
+    border-radius: 10px; /* Rounded corners for a modern look */
+    max-width: 80%; /* Limit width for better readability */
+    text-align: left; /* Ensure text alignment is correct for RTL */
+}
 
-
+.social-icon {
+    width: 40px; /* Adjust size as needed */
+    height: 38px; /* Adjust size as needed */
+    vertical-align: middle; /* Align with text */
+    margin-left: 10px; /* Space between CV button and LinkedIn icon */
+    border-radius: 15px;
+    border-color: black;
+}
 
 
 #about {
