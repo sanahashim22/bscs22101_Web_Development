@@ -18,11 +18,11 @@
         </div>
         <nav id="navbar">
             <ul>
-                <li><a href="main.html#hero">Home</a></li>
-                <li><a href="main.html#about">About me</a></li>
-                <li><a href="main.html#skills">Skills</a></li>
-                <li><a href="main.html#projects">Projects</a></li>
-                <li><a href="main.html#education">Education</a></li>
+                <li><a href="main with js object implementation.html#hero">Home</a></li>
+                <li><a href="main with js object implementation.html#about">About me</a></li>
+                <li><a href="main with js object implementation.html#skills">Skills</a></li>
+                <li><a href="main with js object implementation.html#projects">Projects</a></li>
+                <li><a href="main with js object implementation.html#education">Education</a></li>
                 <li class="dropdown">
                     <a href="#certifications" class="dropbtn">Certifications</a>
                     <div class="dropdown-content">
@@ -41,8 +41,8 @@
                 <li class="dropdown">
                     <a href="#vid" class="dropbtn">Courses</a>
                     <div class="dropdown-content">
-                    <a href="main.html#courses">Courses</a>
-                    <a href="main.html#video">Video</a>
+                    <a href="main with js object implementation.html#courses">Courses</a>
+                    <a href="main with js object implementation.html#video">Video</a>
                     </div>
                 </li>
             </ul>
@@ -57,12 +57,15 @@
     
 
     <footer class="cert">
-        &copy; 2024 Sana Hashim. All rights reserved.
+
     </footer>
     
    <script>
 
     const profileData = {
+        name: "Sana Hashim",
+        year: 2024,
+        rights: "All rights reserved.",
         awards:[
             "Merit Based Scholarship, Superior Group of Colleges - Sep 2022",
             "Excellence in Debate, Superior Group of Colleges. - Nov 2021",
@@ -77,11 +80,14 @@
         <img src="logo.png" alt="Logo" class="logo">
         <h1>Portfolio</h1> 
     `;
+    
     document.querySelector('#certificates').innerHTML=`
     <h2>Honors and Awards</h2>
     <ul>${profileData.awards.map(certif=> `<li> ${certif}</li>`).join('')}</ul>
     `;
-         
+    document.querySelector('.cert').innerHTML = `
+    <p>&copy; ${profileData.year} ${profileData.name}. ${profileData.rights}</p>
+`;
     });
     
    </script>

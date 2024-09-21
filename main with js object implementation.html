@@ -114,12 +114,13 @@
 <section id="video">
     <h2>Video Content</h2>
     <div class="video-container">
+
     </div>
 </section>
 
 
-    <section class="container">
-        <h2>Rate my portfolio</h2>
+   <!--  <section class="container">
+         <h2>Rate my portfolio</h2>
         <label for="rating">Select your rating:</label>
         <select id="rating">
             <option value="" disabled selected>Select a rating</option>
@@ -132,12 +133,17 @@
 
         <div class="result">
             <p id="user-rating"></p>
+        </div> 
+    </section> -->
+    <section class="container">
+        <h2 id="rating-title"></h2>
+        <label for="rating">Select your rating:</label>
+        <select id="rate"></select>
+        <div class="result">
+            <p id="user-rating"></p>
         </div>
     </section>
-
-    <footer>
-        &copy; 2024 Sana Hashim. All rights reserved.
-    </footer>
+   
 
 
 
@@ -148,6 +154,8 @@
             address: "Faisal Town, 54-B, Lahore, Pakistan",
             phone: "(+92) 323-1638253",
             email: "sanahashim22@gmail.com",
+            year: 2024,
+            rights: "All rights reserved.",
             skills: { //key value pairs {}
             technical: ["C++", "C#", "Python", "Java", "SQL"], //array [] for ul li
             soft: ["Communication Skills", "Debate", "Leadership", "Teamwork", "Quick Learner"]
@@ -184,7 +192,12 @@
                     institution: "Superior Group of Colleges, LHR, Pakistan",
                     grade: "A+"
                 }
-            ]
+            ],
+            rating: {
+                title: "Rate my portfolio",
+                options: [1, 2, 3, 4, 5],
+                selectedRating: null
+            }
         };
         
         // Populate the HTML
@@ -271,17 +284,47 @@
                     <p>Overall grade achieved: ${item.grade}</p>
                 </div>
             `).join('')}`;
-             
+
+            
+            document.body.innerHTML += `
+            <footer>
+            <p>&copy; ${profileData.year} ${profileData.name}. ${profileData.rights}</p>
+            </footer>
+        `;
+        document.getElementById('rating-title').innerText = profileData.rating.title;
+
+        // Populate the select options
+        const ratingSelect = document.getElementById('rate');
+        profileData.rating.options.forEach(option => {
+            const opt = document.createElement('option');
+            opt.value = option;
+            opt.innerText = option;
+            ratingSelect.appendChild(opt);
         });
+    
+        const defaultOption = document.createElement('option');
+        defaultOption.value = "";
+        defaultOption.disabled = true;
+        defaultOption.selected = true;
+        defaultOption.innerText = "Select a rating";
+        ratingSelect.appendChild(defaultOption);
+
+        // Event listener for rating selection
+        ratingSelect.addEventListener('change', function() {
+            profileData.rating.selectedRating = this.value;
+            document.getElementById('user-rating').innerHTML = `You selected a rating of: ${profileData.rating.selectedRating}`;
+            console.log(JSON.stringify({ rating: profileData.rating.selectedRating }));
+        });
+    });
         
-        document.getElementById('rating').addEventListener('change', function() {
+        /* document.getElementById('rating').addEventListener('change', function() {
             let selectedRating = this.value;
             let userRating = {
                 "rating": selectedRating
             };
             document.getElementById('user-rating').innerHTML = `You selected a rating of: ${userRating.rating}`;
             console.log(JSON.stringify(userRating));
-        });
+        }); */
     </script>
     
    
