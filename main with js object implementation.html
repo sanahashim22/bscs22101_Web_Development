@@ -9,6 +9,8 @@
     <title>Sana Hashim - Profile</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" media="screen and (max-width:820px)" href="phone.css">
+    <link rel="stylesheet" media="screen and (max-width:380px)" href="phoneforpic.css">
+
 
     
 </head>
@@ -143,12 +145,12 @@
             <p id="user-rating"></p>
         </div>
     </section>
-   
-
-
 
 
     <script>
+
+
+
         const profileData = {
             name: "Sana Hashim",
             address: "Faisal Town, 54-B, Lahore, Pakistan",
@@ -200,10 +202,9 @@
             }
         };
         
+        
         // Populate the HTML
-        document.addEventListener("DOMContentLoaded", function() {
-
-
+            document.addEventListener("DOMContentLoaded", function() {
 
             //home
             document.querySelector('.text-content').innerHTML = `
@@ -240,6 +241,9 @@
             </video>
             `;
 
+          //  document.querySelector(".menu-icon").addEventListener("click", function () {
+          //      this.classList.toggle("active");
+          //  }); 
 
             // Skills Section
             document.querySelector('.skills-container').innerHTML = `
