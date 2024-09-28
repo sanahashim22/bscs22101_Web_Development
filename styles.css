@@ -1,28 +1,47 @@
 
 
+
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+
 }
+
+
+.desktop {
+    display: block;
+}
+
+.mobile {
+    display: none;
+}
+
+
+
+
 
 html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
+
 }
 
-h1 {
-    margin: 2px;              
+.desktop h1 {
+    margin: 2px;          
+    margin-right: 170px;                
 }
 
-.logo {
+.desktop .logo {
     display: flex;              
     align-items: center;        
 }
 
-.logo {
+.desktop .logo {
     height: 40px;               
     margin-right: 10px;        
 }
-body {
+.desktop body {
     background-image: url('bg.jpg'); 
     background-repeat: no-repeat ; 
     background-size: cover;
@@ -31,9 +50,11 @@ body {
     /* line-height: 1.6; */
     /* margin: 0;
     padding: 0; */
+    overflow-x: hidden;
+
 }
 
-section {
+.desktop section {
     
     padding: 20px;
     margin-bottom: 20px;
@@ -44,57 +65,63 @@ section {
 }
 
 
-header {
+.desktop header {
     display: flex;            
-    justify-content: space-between; 
-    align-items: center;        
+    justify-content: space-between; /*distribute equal space between logo h1 and nav*/
+    align-items: center;      /*top bottom left right har taraf items centered hon*/  
     background-color: rgba(68, 68, 68, 0.5);
     /* background-color: #444444;     */
     padding: 10px 20px;         
     color: #fff;  
-    position: sticky; 
-    top: 0; 
-    /* z-index: 1000;    */
-        
+    /* position: sticky; means neechy scroll mein bhi yeh nazar aye */
+    top: 0; /*navbar stick k upar 0px distance */
+    /* z-index: 10000;  It provides a high stacking level to make sure it’s visible above other content. means when we xcroll it moves on other elements      */
+    position: fixed; /* You can try using fixed instead of sticky */
+    /* top: 0; */
+    left: 0;
+    width: 100%;
+    z-index: 10000;
 }
 
 
-#navbar ul {
+.desktop #navbar ul {
     list-style-type: none;      
     margin: 0;
     padding: 0;
     display: flex;             
 }
 
-#navbar {
+.desktop #navbar {
     display: flex; 
     align-items: center;  
     position: sticky;
     top: 0;
+    width: 100%;
 }
 
 
-#navbar ul li {
+.desktop #navbar ul li {
     margin-left: 20px;          
 }
 
-#navbar ul li a {
+.desktop #navbar ul li a {
     text-decoration: none;      
     color: #fff;           
     padding: 5px 10px;          
     transition: background-color 0.3s ease; 
+    font-size: 19px;
 }
 
-#navbar ul li a:hover {
+.desktop #navbar ul li a:hover {
     background-color: #f5efef;     
     border-radius: 10px;   
     color: #090909; 
 }
-.logo img {
+.desktop .logo img {
     filter: brightness(0) invert(1);
 }
 
-.cert{
+.desktop .cert{
     background-color: #090909;
     color: #fff;
     text-align: center;
@@ -103,7 +130,7 @@ header {
     bottom: 0;
     width: 100%;
 }
-footer {
+.desktop footer {
     background-color: #090909;
     color: #fff;
     text-align: center;
@@ -112,23 +139,24 @@ footer {
     width: 100%;
 }
 
-section {
+.desktop section {
     border: none; 
 }
 
-section {
+.desktop  section {
     margin: 0;
     padding: 0;
 }
 
-#hero {
+.desktop #hero {
 
     /* background-size: cover;
     background-position: center; */
-    background-image: url('bg.jpg'); 
+    /* background-image: url('bg.jpg'); 
     background-repeat: no-repeat ; 
     background-size: cover;
-    background-position: center; 
+    background-position: center;  */
+    background-image: linear-gradient(rgb(62, 14, 15), rgb(24, 23, 67) );
     height: 90vh;
     display: flex;
     align-items: center;
@@ -141,15 +169,17 @@ section {
 }
 
 
-#her {
+.desktop #her {
 
     /* background-size: cover;
     background-position: center; */
-    background-image: url('bg.jpg'); 
+    /* background-image: url('bg.jpg'); 
     background-repeat: no-repeat ; 
     background-size: cover;
-    background-position: center; 
-    height: 90vh;
+    background-position: center;  */
+    background-image: linear-gradient(rgb(62, 14, 15), rgb(24, 23, 67) );
+
+    height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -160,15 +190,16 @@ section {
     text-align: right;
 }
 
-#he {
+.desktop #he {
 
     /* background-size: cover;
     background-position: center; */
-    background-image: url('bg.jpg'); 
+    /* background-image: url('bg.jpg'); 
     background-repeat: no-repeat ; 
     background-size: cover;
-    background-position: center; 
-    height: 90vh;
+    background-position: center;  */
+    background-image: linear-gradient(rgb(62, 14, 15), rgb(24, 23, 67) );
+    height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -178,7 +209,7 @@ section {
     direction: rtl;
     text-align: right;
 }
-#hero p {
+.desktop #hero p {
     color: white;
     margin: 0;
     padding: 20px; /* Add padding for better readability */
@@ -191,7 +222,7 @@ section {
 
 
 
-#her p {
+.desktop #her p {
     color: white;
     margin: 0;
     padding: 20px; /* Add padding for better readability */
@@ -202,7 +233,7 @@ section {
     text-align: right; /* Ensure text alignment is correct for RTL */
 }
 
-#he p {
+.desktop #he p {
     color: white;
     margin: 0;
     padding: 20px; /* Add padding for better readability */
@@ -212,7 +243,7 @@ section {
     max-width: 80%; /* Limit width for better readability */
     text-align: right; /* Ensure text alignment is correct for RTL */
 }
-#about {
+.desktop #about {
     background-image: url('bg.jpg'); 
     background-repeat: no-repeat ; 
     background-size: cover;
@@ -223,30 +254,30 @@ section {
     flex-direction: column; 
 }
 
-.about-content {
+.desktop .about-content {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    max-width: 1000px;
+    max-width: 80%;
     width: 100%;
-    padding: 50px;
+    padding: 50px 0px;
 }
 
-.about-text {
+.desktop .about-text {
     flex: 1;
     padding: 80px;
     color: white;
     font-size: 20px;
 }
 
-.image-content {
+.desktop .image-content {
     flex: 1;
     display: flex;
     justify-content: flex-end;
 }
 
-.image-content img {
-    max-width: 260px; 
+.desktop .image-content img {
+    max-width: 55%; 
     height: auto;    
     border-radius: 100px;
     box-shadow: 0 4px 8px rgba(255, 255, 255, 0.5); 
@@ -255,7 +286,7 @@ section {
 
 }
 
-.btn{
+.desktop .btn{
     padding: 3px 20px;
     margin: 34px 0px;
     border: 4px solid rgb(254, 254, 255);
@@ -266,7 +297,7 @@ section {
     cursor: pointer;
 }
 
-.btn:hover{
+.desktop .btn:hover{
 background-color: #f7f4f4;     
 border-radius: 10px;   
 color: #1b1616; 
@@ -279,7 +310,7 @@ border: 4px solid rgb(9, 9, 10);
 
 
 
-#skills {
+.desktop #skills {
     background-image: url('bg.jpg') ; 
     background-repeat: no-repeat ; 
     background-size: cover;
@@ -289,42 +320,42 @@ border: 4px solid rgb(9, 9, 10);
     height: 500px;
 }
 
-#skills h2 {
+.desktop #skills h2 {
     font-size: 46px;
     color: #ffffff;
     margin-bottom: 25px;
 }
 
-.skills-container {
+.desktop .skills-container {
     display: flex;
     justify-content: center; 
     gap: 200px; 
 }
 
-.skills-list {
+.desktop .skills-list {
     flex: 1;
     text-align: left; 
-    max-width: 320px; 
+    max-width: 30%; 
 }
 
-#skills h3 {
+.desktop #skills h3 {
     font-size: 28px;
     color: #ffffff;
     margin-bottom: 10px;
 }
 
-#skills ul {
+.desktop #skills ul {
     list-style-type: none; 
     padding: 0;
 }
 
-#skills ul li {
+.desktop #skills ul li {
     font-size: 18px;
     color: #ffffff;
     margin: 15px 0;
 }
 
-#skills ul li:hover {
+.desktop #skills ul li:hover {
     color: #0e0d0d;
     font-weight: bold;
     background-color: white;
@@ -334,7 +365,7 @@ border: 4px solid rgb(9, 9, 10);
 }
 
 
-#skills .box{
+.desktop #skills .box{
     border: 2px solid rgb(255, 249, 249);
     background-color: rgba(68, 68, 68, 0.4);
     padding: 12px;
@@ -342,7 +373,7 @@ border: 4px solid rgb(9, 9, 10);
     border-radius: 23px;
     margin-bottom: 5px;
 }
-#education {
+.desktop #education {
     background-image: url('bg.jpg'); 
     background-repeat: no-repeat; 
     background-size: cover;
@@ -351,14 +382,14 @@ border: 4px solid rgb(9, 9, 10);
     color: #fff;   
 }
 
-#education h2 {
+.desktop #education h2 {
     font-size: 36px;
     text-align: center;
     margin-bottom: 20px;
     padding: 50px;
 }
 
-.education-list img {
+.desktop .education-list img {
     width: 50px;
     height: 50px;
     margin-right: 15px;
@@ -368,39 +399,39 @@ border: 4px solid rgb(9, 9, 10);
 
 }
 
-.education-container {
+.desktop .education-container {
     display: flex;
     justify-content: center; 
     gap: 100px; 
     flex-wrap: wrap;
 }
 
-.education-list {
+.desktop .education-list {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     padding: 20px;
     border-radius: 10px;
-    max-width: 400px;
+    max-width: 36%;
     flex: 1;
 }
 
-.education-year {
+.desktop .education-year {
     display: flex;
     align-items: center; 
     margin-bottom: 15px; 
 }
 
-.education-year h3 {
+.desktop .education-year h3 {
     font-size: 18px;
     margin: 0;
 }
 
-#education p {
+.desktop #education p {
     margin-bottom: 30px;
 }
 
-#projects {
+.desktop #projects {
     background-image: url('bg.jpg'); 
     background-repeat: no-repeat ; 
     background-size: cover;
@@ -409,13 +440,13 @@ border: 4px solid rgb(9, 9, 10);
     color: #fff;
 }
 
-#projects h2 {
+.desktop #projects h2 {
     font-size: 36px;
     text-align: center;
     margin-bottom: 20px;
 }
 
-#projects ul {
+.desktop #projects ul {
     list-style-type: none; 
     padding: 0;
     margin: 0;
@@ -424,7 +455,7 @@ border: 4px solid rgb(9, 9, 10);
     align-items: center;
 }
 
-#projects ul li {
+.desktop #projects ul li {
     font-size: 18px;
     margin: 10px 0;
     background-color: rgba(255, 255, 255, 0.1);
@@ -435,18 +466,18 @@ border: 4px solid rgb(9, 9, 10);
     transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-#projects ul li:hover {
+.desktop #projects ul li:hover {
     background-color: rgba(255, 255, 255, 0.3);
     transform: scale(1.05);
 }
 
 
-.dropdown {
+.desktop .dropdown {
     position: relative;
     display: inline-block;
 }
 
-.dropbtn {
+.desktop .dropbtn {
     background-color: inherit;
     color: rgb(11, 10, 10);
     padding: 14px 16px;
@@ -456,7 +487,7 @@ border: 4px solid rgb(9, 9, 10);
 }
 
 
-.dropdown-content {
+.desktop .dropdown-content {
     display: none;
     position: absolute;
     background-color: transparent;
@@ -465,54 +496,73 @@ border: 4px solid rgb(9, 9, 10);
     z-index: 1;
 }
 
-.dropdown-content a {
+.desktop .dropdown-content a {
     color: white; 
     padding: 12px 16px;
     text-decoration: none;
     display: block;
 }
 
-.dropdown-content a:hover {
+.desktop .dropdown-content a:hover {
     background-color: rgba(255, 255, 255, 0.1); 
 }
 
 
-.dropdown:hover .dropdown-content {
+.desktop .dropdown:hover .dropdown-content {
     display: block;
 }
 
-.dropdown:hover .dropbtn {
+.desktop .dropdown:hover .dropbtn {
     background-color: #555;
 }
 
 
 
 
-#certificates {
+.desktop #certificates {
+    background-image: url('bg.jpg'); 
+    background-repeat: no-repeat ; 
+    background-size: cover;
+    background-position: center; 
     padding: 30px;
-    margin: 70px auto;
+    margin: 90px auto;
     text-align: center;
 }
-
-#certificates h2 {
+.desktop #certificates {
+    background-image: url('bg.jpg'); 
+    background-repeat: no-repeat ; 
+    background-size: cover;
+    background-position: center; 
+    padding: 30px;
+    margin: 90px auto;
+    text-align: center;
+}
+.desktop #certificates h2 {
     color: #fcfcfc;
     margin-bottom: 30px;
 }
 
-#certificates ul {
+.desktop #certificates ul {
     list-style-type: none; 
     padding: 0;
 }
 
-#certificates ul li {
+.desktop #certificates ul li {
     font-size: 18px;
     color: #fffdfd;
     margin: 13px 0;
 }
 
 
+.desktop .heading {
+    margin-left: 10px;
+    font-size: 23px;
+    /* margin-right: 170px; */
+    white-space: nowrap;
+    /* display: inline; */
+}
 
-#courses {
+.desktop #courses {
     background-image: url('bg.jpg'); 
     background-repeat: no-repeat ; 
     background-size: cover;
@@ -521,13 +571,13 @@ border: 4px solid rgb(9, 9, 10);
     color: #fff;
 }
 
-#courses h2 {
+.desktop #courses h2 {
     font-size: 36px;
     text-align: center;
     margin-bottom: 20px;
 }
 
-#courses ul {
+.desktop #courses ul {
     list-style-type: none; 
     padding: 0;
     margin: 0;
@@ -536,7 +586,7 @@ border: 4px solid rgb(9, 9, 10);
     align-items: center;
 }
 
-#courses ul li {
+.desktop #courses ul li {
     font-size: 18px;
     margin: 10px 0;
     background-color: rgba(255, 255, 255, 0.1);
@@ -547,13 +597,13 @@ border: 4px solid rgb(9, 9, 10);
     transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-#courses ul li:hover {
+.desktop #courses ul li:hover {
     background-color: rgba(255, 255, 255, 0.3);
     transform: scale(1.05);
 }
 
 
-.social-icon {
+.desktop .social-icon {
     width: 40px; /* Adjust size as needed */
     height: 38px; /* Adjust size as needed */
     vertical-align: middle; /* Align with text */
@@ -561,3 +611,5 @@ border: 4px solid rgb(9, 9, 10);
     border-radius: 15px;
     border-color: black;
 }
+
+

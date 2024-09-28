@@ -1,98 +1,166 @@
 
 
+.desktop {
+    display: block;
+}
+
+.mobile {
+    display: none;
+}
+
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
+
+/* .desktop { */
+
+
 
 html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
+    background-image: linear-gradient(rgb(18, 2, 46), rgb(79, 49, 12) );
+
 }
 
-h1 {
-    margin: 10px;              
+.desktop .heading {
+    margin-left: 13px; 
+    font-size: 27px;
+    /* margin-right: 170px;   */
+    white-space: nowrap;
+    /* display: inline;            */
 }
 
-.logo {
-    display: flex;              
-    align-items: center;        
+.desktop .logo {
+    display: flex;    
+    /* This means its direct children (like an image and text) become flex items and are laid out according to Flexbox rules. This is useful for aligning items horizontally or vertically within the .logo container.       */
+    align-items: center; /*this property of flexbox will ensure that both the image and text are aligned in the middle of the container*/  
 }
 
-.logo {
-    height: 40px;               
-    margin-right: 10px;        
+.desktop .logo {
+    /* The height of the .logo container with element will be fixed at 40 pixels. This means that regardless of the content within it, the container will always be 40 pixels tall. */
+    height: 40px;      
+    /* It ensures that there's a 10-pixel gap between the right edge of the .logo and the element that follows it.          */
+    margin-right: 40px 0px;        
 }
-body {
-    background-image: url('bg.jpg'); 
+.desktop .logo img {
+    filter: brightness(0) invert(1); /*image ka color white black to black white krny k liye*/
+}
+.desktop body {
+    /* background-image: url('bg.jpg'); 
     background-repeat: no-repeat ; 
     background-size: cover;
-    background-position: center; 
+    background-position: center;  */
     font-family: Arial, sans-serif;
-    line-height: 1.6;
+    line-height: 1.6;  /*each line of text will be spaced 1.6 height apart from the line above and below it.*/
     margin: 0;
     padding: 0;
+    overflow-x: hidden;
 }
 
-section {
+.desktop section {
     
-    padding: 20px;
+    padding: 20px;  /* This sets the padding on all four sides (top, right, bottom, and left) of the element to 20px. if 2 arg then 1st is top bottom and 2nd is left right*/
     margin-bottom: 20px;
-    border-bottom: 1px solid #ccc;
-    background: none; 
-    min-height: 100px;
+    /* border-bottom: 1px solid #130065; */
+    background: none;  /*is mein background none de kr har section mein dena hai jesy project skills etc*/
+    min-height: 100px; /*section ki min height*/
+    border: none; 
+
+}
+
+.desktop section {
+    margin: 0;
+    padding: 0;  /*it overrites the above 20 to 0*/
 }
 
 
-header {
+.desktop header {
+    /* margin: 0; */
     display: flex;            
-    justify-content: space-between; 
-    align-items: center;        
+    justify-content: space-between; /*distribute equal space between logo h1 and nav*/
+    align-items: center;      /*top bottom left right har taraf items centered hon*/  
     background-color: rgba(68, 68, 68, 0.5);
     /* background-color: #444444;     */
     padding: 10px 20px;         
     color: #fff;  
-    position: sticky; 
-    top: 0; 
-    z-index: 1000;             
+    /* position: sticky; means neechy scroll mein bhi yeh nazar aye */
+    top: 0; /*navbar stick k upar 0px distance */
+    /* z-index: 10000;  It provides a high stacking level to make sure it’s visible above other content. means when we xcroll it moves on other elements      */
+    position: fixed; /* You can try using fixed instead of sticky */
+    /* top: 0; */
+    left: 0;
+    width: 100%;
+    z-index: 10000;
 }
 
 
-#navbar ul {
+.desktop #navbar ul {
     list-style-type: none;      
-    margin: 0;
+    margin-left: 22%;
     padding: 0;
-    display: flex;             
+    display: flex; 
 }
 
-#navbar {
+.desktop .sana{
+    font-size: 60px;
+}
+.desktop #navbar {
     display: flex; 
     align-items: center;  
     position: sticky;
     top: 0;
+    width: 100%;
+}
+.desktop .image-con {
+    height: 32%;
+    width: 51%;
+    font-size: 141px;
+    animation: bounce 2s infinite; 
+}
+.desktop .image-con i {
+    animation: bounce 2s infinite; 
 }
 
-
-#navbar ul li {
+.desktop .image-cont {
+    height: 52%;
+    width: 26%;
+    font-size: 165px;
+    color: white;
+}
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0); /* Starting and ending positions */
+    }
+    40% {
+        transform: translateY(-30px); /* Move up by 30px */
+    }
+    60% {
+        transform: translateY(-15px); /* Move up by 15px */
+    }
+}
+.desktop #navbar ul li {
     margin-left: 20px;          
 }
 
-#navbar ul li a {
+.desktop #navbar ul li a {
     text-decoration: none;      
     color: #fff;           
-    padding: 5px 10px;          
+    padding: 5px 7px;          
     transition: background-color 0.3s ease; 
+    font-size: 19px;
 }
 
-#navbar ul li a:hover {
+.desktop #navbar ul li a:hover {
     background-color: #f5efef;     
     border-radius: 10px;   
     color: #090909; 
 }
-.logo img {
-    filter: brightness(0) invert(1);
-}
 
-.cert{
+/*footer for other files*/
+.desktop .cert{
     background-color: #090909;
     color: #fff;
     text-align: center;
@@ -101,7 +169,7 @@ header {
     bottom: 0;
     width: 100%;
 }
-footer {
+.desktop footer {
     background-color: #090909;
     color: #fff;
     text-align: center;
@@ -110,65 +178,115 @@ footer {
     width: 100%;
 }
 
-section {
-    border: none; 
+
+
+.desktop .dropdown {
+    position: relative; /*makes sure the dropdown menu will appear right below this certification,language etx tags*/
+    display: inline-block; /*Keeps the button in line with other items in the navigation bar*/
 }
 
-section {
-    margin: 0;
-    padding: 0;
+.desktop .dropbtn {
+    background-color: inherit;  /*The background-color: inherit; property in CSS means that the element will use the same background color as its parent element. means parent is dropdown*/
+    color: rgb(11, 10, 10);
+    padding: 14px 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
 }
 
-#hero {
+
+.desktop .dropdown-content {
+    display: none; /*this hides the element completely. It is as if the element does not exist in the document. The space that the element would normally occupy is collapsed.*/
+    position: absolute; /* This means it does not affect the position of other elements, and other elements do not affect its position.*/
+    background-color: transparent;
+    /*The element will be at least 160 pixels wide. If the content inside the element requires more space, the element will expand beyond 160 pixels, but it will not shrink below this minimum width*/
+    min-width: 160px;
+    box-shadow: none; /*Eliminates any shadow effect around the element.*/
+    z-index: 1; /*The z-index value of 1 means the element will be placed above other elements that have z index 0*/
+}
+
+.desktop .dropdown-content a {
+    color: white; 
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block; /*Block-level elements take up the full width available to them, extending from the left edge to the right edge of their container and each appears on new line. while display: inline; do not start on a new line and only take up as much width as their content requires.*/
+}
+
+.desktop .dropdown-content a:hover {
+    background-color: rgba(255, 255, 255, 0.1); 
+}
+
+
+.desktop .dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.desktop .dropdown:hover .dropbtn {
+    background-color: #555;
+}
+
+.desktop p{
+    font-size: 18px;
+    padding: 2px 0px;
+}
+
+
+
+.desktop #hero {
 
     /* background-size: cover;
     background-position: center; */
-    background-image: url('bg.jpg'); 
+    /* background-image: url('bg.jpg'); 
     background-repeat: no-repeat ; 
     background-size: cover;
-    background-position: center; 
-    height: 90vh;
+    background-position: center;  */
+    background-image: linear-gradient(rgb(62, 14, 15), rgb(24, 23, 67) );
+
+    height: 100vh;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: center; /*Centers the items within the container along the main axis. item or content positioned in center*/
     color: #fff;
     font-size: 20px;
     padding: 30px 20px; 
 }
 
-#her {
+.desktop #her {
 
     /* background-size: cover;
     background-position: center; */
-    background-image: url('bg.jpg'); 
+    /* background-image: url('bg.jpg'); 
     background-repeat: no-repeat ; 
     background-size: cover;
-    background-position: center; 
+    background-position: center;  */
+    background-image: linear-gradient(rgb(62, 14, 15), rgb(24, 23, 67) );
+
     height: 90vh;
     display: flex;
     align-items: center;
-    justify-content: center;
+    /* justify-content: center; */
     color: #fff;
     font-size: 20px;
     padding: 30px 20px; 
 }
 
-.hero-content {
-    display: flex;
-    align-items: center;
+.desktop .hero-content {
     justify-content: space-between;
-    max-width: 1000px; 
-    width: 100%;
-    padding: 20px;
-    border-radius: 10px;
+    /* max-width: 1000px;  */
+    max-width: 90%;
 }
-h2{
+.desktop h2{
     color: white;
+    font-size: 43px;
 }
-.text-content {
+.desktop .text-content {
+    /* flex: 1; makes an element inside a flex container flexible. Here’s what it does:
+    Fills Extra Space: The element will grow to take up any extra space in the container.
+    Shrinks if Needed: If the container gets smaller, the element will shrink to fit.
+    Flexible Size: The element’s size is not fixed; it adjusts based on the available space. */
     flex: 1;
-    padding: 20px;
-    max-width: 50%;
+    padding: 70px;
+    max-width: 90%;
 }
 
 
@@ -176,42 +294,45 @@ h2{
 
 
 
-#about {
-    background-image: url('bg.jpg'); 
+.desktop #about {
+    /* background-image: url('bg.jpg'); 
     background-repeat: no-repeat ; 
     background-size: cover;
-    background-position: center; 
+    background-position: center;  */
+    background-image: linear-gradient(rgb(62, 14, 15), rgb(24, 23, 67) );
+
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column; 
+    height: 100vh;
 }
 
-.about-content {
+.desktop .about-content {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    max-width: 1000px;
+    max-width: 80%;
     width: 100%;
-    padding: 50px;
+    padding: 50px 0px;
 }
 
-.about-text {
+.desktop .about-text {
     flex: 1;
     padding: 80px;
     color: white;
     font-size: 20px;
 }
 
-.image-content {
+.desktop .image-content {
     flex: 1;
     display: flex;
-    justify-content: flex-end;
+    justify-content: flex-end; /* items will line up on the right side of the box.*/
 }
 
-.image-content img {
-    max-width: 260px; 
-    height: auto;    
+.desktop .image-content img {
+    max-width: 55%; 
+    height: auto;    /*the height of an element will adjust automatically based on its content.*/
     border-radius: 100px;
     box-shadow: 0 4px 8px rgba(255, 255, 255, 0.5); 
     margin-bottom: 40px;
@@ -219,18 +340,18 @@ h2{
 
 }
 
-.btn{
+.desktop .btn{
     padding: 3px 20px;
     margin: 34px 0px;
     border: 4px solid rgb(254, 254, 255);
     color: rgb(247, 242, 242);
-    background-color: rgb(14, 22, 83);
+    background-color: rgb(18 26 83);
     font-size: 1.3rem;
     border-radius: 10px;
     cursor: pointer;
 }
 
-.btn:hover{
+.desktop .btn:hover{
 background-color: #f7f4f4;     
 border-radius: 10px;   
 color: #1b1616; 
@@ -243,86 +364,97 @@ border: 4px solid rgb(9, 9, 10);
 
 
 
-#skills {
-    background-image: url('bg.jpg') ; 
+.desktop #skills {
+    /* background-image: url('bg.jpg') ; 
     background-repeat: no-repeat ; 
     background-size: cover;
-    background-position: center; 
-    padding: 70px;
+    background-position: center;  */
+    background-image: linear-gradient(rgb(62, 14, 15), rgb(24, 23, 67) );
+
+    padding: 68px;
     text-align: center;
-    height: 500px;
+    height: 110vh;
 }
 
-#skills h2 {
-    font-size: 46px;
+.desktop #skills h2 {
+    font-size: 66px;
     color: #ffffff;
-    margin-bottom: 25px;
+    margin-bottom: 34px;
 }
 
-.skills-container {
+.desktop .skills-container {
     display: flex;
     justify-content: center; 
     gap: 200px; 
 }
 
-.skills-list {
+.desktop .skills-list {
     flex: 1;
     text-align: left; 
-    max-width: 320px; 
+    /* max-width: 320px;  */
+    max-width: 33%;
 }
 
-#skills h3 {
+.desktop #skills h3 {
     font-size: 28px;
     color: #ffffff;
     margin-bottom: 10px;
 }
 
-#skills ul {
+.desktop #skills ul {
     list-style-type: none; 
     padding: 0;
 }
 
-#skills ul li {
-    font-size: 18px;
+.desktop #skills ul li {
+    font-size: 22px;
     color: #ffffff;
     margin: 15px 0;
+    padding: 6px 17px; /* Keep consistent padding */
+    border-radius: 20px; /* Keep this consistent to prevent height changes */
+    border: 1px solid transparent; /* Define an invisible border initially */
+    box-sizing: border-box; /* Ensure border and padding don't affect the size */
+    transition: background-color 0.3s ease, color 0.3s ease; 
 }
 
-#skills ul li:hover {
+.desktop #skills ul li:hover {
     color: #0e0d0d;
     font-weight: bold;
     background-color: white;
-    border: 2px solid black;
+    border: 1px solid black;
     border-radius: 20px;
-    text-align: center;
+    padding: 6px 17px; 
 }
 
 
-#skills .box{
+.desktop #skills .box{
     border: 2px solid rgb(255, 249, 249);
     background-color: rgba(68, 68, 68, 0.4);
     padding: 12px;
-    margin: -12px 7px;
+    margin: -10px 7px;
     border-radius: 23px;
     margin-bottom: 5px;
+    /* position: absolute; */
 }
-#education {
-    background-image: url('bg.jpg'); 
+.desktop #education {
+    /* background-image: url('bg.jpg'); 
     background-repeat: no-repeat; 
     background-size: cover;
-    background-position: center; 
-    padding: 70px;
+    background-position: center;  */
+    background-image: linear-gradient(rgb(62, 14, 15), rgb(24, 23, 67) );
+
+    padding: 80px;
     color: #fff;   
 }
 
-#education h2 {
-    font-size: 36px;
+.desktop #education h2 {
+    font-size: 42px;
     text-align: center;
     margin-bottom: 20px;
     padding: 50px;
 }
 
-.education-list img {
+.desktop .education-list img {
     width: 50px;
     height: 50px;
     margin-right: 15px;
@@ -332,54 +464,66 @@ border: 4px solid rgb(9, 9, 10);
 
 }
 
-.education-container {
+.desktop .education-container {
     display: flex;
     justify-content: center; 
     gap: 100px; 
+    /*If the flex items (children of the flex container) exceed the width of the container, flex-wrap: wrap; makes them move to the next line instead of overflowing the container.*/
     flex-wrap: wrap;
+    /* border: 2px solid #000000; */
+    /* background-image: linear-gradient(rgb(62, 7, 80), rgb(26, 25, 110) ); */
+
 }
 
-.education-list {
+.desktop .education-list {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: flex-start; /*, it aligns the flex items to the start of the cross axis*/
     padding: 20px;
     border-radius: 10px;
-    max-width: 400px;
+    /* max-width: 400px; */
+    max-width: 36%;
     flex: 1;
+    font-size: 19px;
+}
+.desktop .education-year i {
+    font-size: 28px;
+    margin: 5px;
 }
 
-.education-year {
+.desktop .education-year {
     display: flex;
     align-items: center; 
     margin-bottom: 15px; 
 }
 
-.education-year h3 {
+.desktop .education-year h3 {
     font-size: 18px;
     margin: 0;
+    margin-left: 2px;
 }
 
-#education p {
+.desktop #education p {
     margin-bottom: 30px;
 }
 
-#projects {
-    background-image: url('bg.jpg'); 
+.desktop #projects {
+    /* background-image: url('bg.jpg'); 
     background-repeat: no-repeat ; 
     background-size: cover;
-    background-position: center; 
+    background-position: center;  */
+    background-image: linear-gradient(rgb(62, 14, 15), rgb(24, 23, 67) );
     padding: 70px;
     color: #fff;
 }
 
-#projects h2 {
-    font-size: 36px;
+.desktop #projects h2 {
+    font-size: 44px;
     text-align: center;
-    margin-bottom: 20px;
+    margin: 22px;
 }
 
-#projects ul {
+.desktop #projects ul {
     list-style-type: none; 
     padding: 0;
     margin: 0;
@@ -388,8 +532,8 @@ border: 4px solid rgb(9, 9, 10);
     align-items: center;
 }
 
-#projects ul li {
-    font-size: 18px;
+.desktop #projects ul li {
+    font-size: 22px;
     margin: 10px 0;
     background-color: rgba(255, 255, 255, 0.1);
     padding: 10px;
@@ -399,99 +543,81 @@ border: 4px solid rgb(9, 9, 10);
     transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-#projects ul li:hover {
+.desktop #projects ul li:hover {
     background-color: rgba(255, 255, 255, 0.3);
     transform: scale(1.05);
 }
 
 
-.dropdown {
-    position: relative;
-    display: inline-block;
-}
-
-.dropbtn {
-    background-color: inherit;
-    color: rgb(11, 10, 10);
-    padding: 14px 16px;
-    font-size: 16px;
-    border: none;
-    cursor: pointer;
-}
 
 
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: transparent;
-    min-width: 160px;
-    box-shadow: none;
-    z-index: 1;
-}
-
-.dropdown-content a {
-    color: white; 
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-}
-
-.dropdown-content a:hover {
-    background-color: rgba(255, 255, 255, 0.1); 
-}
-
-
-.dropdown:hover .dropdown-content {
-    display: block;
-}
-
-.dropdown:hover .dropbtn {
-    background-color: #555;
-}
-
-
-
-
-#certificates {
-    padding: 30px;
-    margin: 70px auto;
+.desktop #certificates {
+    /* background-image: url('bg.jpg'); 
+    background-repeat: no-repeat ; 
+    background-size: cover;
+    background-position: center;  */
+    background-image: linear-gradient(rgb(62, 14, 15), rgb(24, 23, 67) );
+    padding: 152px;
+    /* margin: 90px auto; */
     text-align: center;
 }
-
-#certificates h2 {
+.desktop #certifica {
+    /* background-image: url('bg.jpg'); 
+    background-repeat: no-repeat ; 
+    background-size: cover;
+    background-position: center;  */
+    background-image: linear-gradient(rgb(62, 14, 15), rgb(24, 23, 67) );
+    padding: 190px;
+    /* margin: 90px auto; */
+    text-align: center;
+}
+.desktop #certifica h2 {
+    color: #fcfcfc;
+    margin-bottom: 30px;
+}
+.desktop #certificates h2 {
     color: #fcfcfc;
     margin-bottom: 30px;
 }
 
-#certificates ul {
+.desktop #certificates ul {
     list-style-type: none; 
     padding: 0;
 }
 
-#certificates ul li {
-    font-size: 18px;
+.desktop #certifica ul {
+    list-style-type: none; 
+    padding: 0;
+}
+.desktop #certificates ul li {
+    font-size: 23px;
+    color: #fffdfd;
+    margin: 13px 0;
+}
+.desktop #certifica ul li {
+    font-size: 23px;
     color: #fffdfd;
     margin: 13px 0;
 }
 
 
-
-#courses {
-    background-image: url('bg.jpg'); 
+.desktop #courses {
+    /* background-image: url('bg.jpg'); 
     background-repeat: no-repeat ; 
     background-size: cover;
-    background-position: center; 
+    background-position: center;  */
+    background-image: linear-gradient(rgb(62, 14, 15), rgb(24, 23, 67) );
     padding: 90px;
     color: #fff;
 }
 
-#courses h2 {
+.desktop #courses h2 {
     font-size: 36px;
     text-align: center;
     margin-bottom: 20px;
 }
 
-#courses ul {
+.desktop #courses ul {
     list-style-type: none; 
     padding: 0;
     margin: 0;
@@ -500,8 +626,8 @@ border: 4px solid rgb(9, 9, 10);
     align-items: center;
 }
 
-#courses ul li {
-    font-size: 18px;
+.desktop #courses ul li {
+    font-size: 23px;
     margin: 10px 0;
     background-color: rgba(255, 255, 255, 0.1);
     padding: 10px;
@@ -511,31 +637,32 @@ border: 4px solid rgb(9, 9, 10);
     transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-#courses ul li:hover {
+.desktop #courses ul li:hover {
     background-color: rgba(255, 255, 255, 0.3);
     transform: scale(1.05);
 }
 
 
-#video {
-    background-image: url('bg.jpg'); 
+.desktop #video {
+    /* background-image: url('bg.jpg'); 
     background-repeat: no-repeat ; 
     background-size: cover;
-    background-position: center; 
+    background-position: center;  */
+    background-image: linear-gradient(rgb(62, 14, 15), rgb(24, 23, 67) );
     padding: 70px;
     text-align: center;
     background-color: #f4f4f4; /* Light background color */
-    margin-bottom: 20px;
+    /* margin-bottom: 20px; */
 }
-#video h2{
+.desktop #video h2{
 margin-bottom: 40px;
 }
-.video-container {
+.desktop .video-container {
     max-width: 100%;
     margin: 0 auto;
 }
 
-video {
+.desktop video {
     max-width: 50%; /* Ensure the video is responsive */
     height: auto; /* Maintain aspect ratio */
     border-radius: 20px; /* Rounded corners for a modern look */
@@ -543,17 +670,28 @@ video {
 
 
 
-.social-icon {
+.desktop .social-icon {
     width: 40px; /* Adjust size as needed */
     height: 38px; /* Adjust size as needed */
     vertical-align: middle; /* Align with text */
     margin-left: 10px; /* Space between CV button and LinkedIn icon */
     border-radius: 15px;
-    border-color: black;
+    border-color: rgb(251, 248, 248);
+}
+.desktop .about-text i {
+    width: 46px;
+    height: 39px;
+    vertical-align: middle;
+    margin-left: 11px;
+    border-radius: 15px;
+    border-color: rgb(251, 248, 248);
+    background-color: white;
+    color: #488aaa;
+    padding: 4px 10px;
+    font-size: 28px;
 }
 
-
-.container {
+.desktop .container {
 
     color: white;
     margin: 50px;
@@ -563,17 +701,101 @@ video {
     border-color: black;
     
 }
-.container h2{
+.desktop .container h2{
     text-align: center;
 }
-select {
-    padding: 5px;
+.desktop select {
+    padding: 4px;
     font-size: 16px;
     border-radius: 20px;
     border-color: black;
     margin-top: 40px;
+    text-align: center; 
+    text-align-last: center; 
 
 }
-.result {
+.desktop .result {
     margin-top: 20px;
 }
+.desktop label {
+    font-size: 19px;
+    
+} 
+
+
+
+
+
+.desktop .star-rating-container {
+    /* background-image: url(bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center; */
+    background-image: linear-gradient(rgb(62, 14, 15), rgb(24, 23, 67) );
+    text-align: center;
+    margin-top: 0px;
+    padding: 171px;
+}
+
+.desktop .star {
+    font-size: 50px;
+    color: rgb(251, 251, 251);
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.desktop .star.highlighted {
+    color: gold;
+}
+
+.desktop #user-rating {
+    margin-top: 10px;
+    font-size: 23px;
+    color: white; /* Change the rating text color to white */
+}
+
+
+
+
+
+/* } */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* .mobile { */
+
+
+
+html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+    background-image: linear-gradient(rgb(18, 2, 46), rgb(79, 49, 12) );
+
+}
+
+
+
+
+
+
+
+
+

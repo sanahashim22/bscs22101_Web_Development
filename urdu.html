@@ -8,11 +8,13 @@
     <meta name="description" content="Sana Hashim's portfolio showcasing skills, projects, education, and certifications in software development and engineering.">
     <meta name="keywords" content="Sana Hashim, software developer, software engineer, portfolio, programming, projects, education, certifications, development, engineering, skills">
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" media="screen and (max-width:820px)" href="phone.css">
+    <link rel="stylesheet" media="screen and (max-width:1169px)" href="phone.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
 </head>
 
 <body>
+    <div class="desktop">
     <header>
             <div class="logo">
             </div>
@@ -56,7 +58,7 @@
     
    
     <script>
-        const profileData = {
+        const profileData2 = {
             name: "Sana Hashim",
             year: 2024,
             rights: "All rights reserved.",
@@ -71,18 +73,124 @@
             //logo
             document.querySelector('.logo').innerHTML = `
             <img src="logo.png" alt="Logo" class="logo">
-            <h1>Portfolio</h1> 
+            <h1 class = "heading">Sana H.</h1> 
+
         `;
+        
         document.querySelector('#her').innerHTML = `
-        <p>${profileData.urdu.greeting}<br>${profileData.urdu.description}</p>
+        <p>${profileData2.urdu.greeting}<br>${profileData2.urdu.description}</p>
     `;
-        document.body.innerHTML += `
-        <footer>
-        <p>&copy; ${profileData.year} ${profileData.name}. ${profileData.rights}</p>
-        </footer>
-    `;  
+
+    
+    document.body.innerHTML += `
+    <div class="desktop">
+    <footer>
+    <p>&copy; ${profileData2.year} ${profileData2.name}. ${profileData2.rights}</p>
+    </footer>
+    </div>
+    `;
         });
     </script>
-</body>
+</div>
 
+
+<div class="mobile">
+    <header>
+            <div class="logo2">
+            </div>
+            <div class="menu-icon" onclick="toggleNavbar2()">
+                <i class="fas fa-ellipsis-v"></i>
+            </div>
+            <nav id="navbar2" class="hidden">
+                <ul>
+                    <li><a href="main with js object implementation.html#hero2">Home</a></li>
+                    <li><a href="main with js object implementation.html#about2">About me</a></li>
+                    <li><a href="main with js object implementation.html#skills2">Skills</a></li>
+                    <li><a href="main with js object implementation.html#projects2">Projects</a></li>
+                    <li><a href="main with js object implementation.html#education2">Education</a></li>
+                    <li class="dropdown2">
+                        <a href="#certifications" class="dropbtn2">Certifications</a>
+                        <div class="dropdown-content2">
+                            <a href="award.html">Awards</a>
+                            <a href="certificate.html">Certificates</a>
+                        </div>
+                    </li>
+                    <li class="dropdown2">
+                        <a href="#language" class="dropbtn2">Languages</a>
+                        <div class="dropdown-content2">
+                            <a href="arabic.html">Arabic</a>
+                            <a href="urdu.html">Urdu</a>
+                            <a href="french.html">French</a>
+                        </div>
+                    </li>
+                    <li class="dropdown2">
+                        <a href="#vid" class="dropbtn2">Courses</a>
+                        <div class="dropdown-content2">
+                            <a href="main with js object implementation.html#courses2">Courses</a>
+                            <a href="main with js object implementation.html#video2">Video</a>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+    </header>
+
+    
+    <section id="her2">
+      
+        </section>
+    
+   
+    <script>
+        const profileData = {
+            name: "Sana Hashim",
+            year: 2024,
+            rights: "All rights reserved.",
+            urdu:{
+                greeting: "ہیلو میں ثنا ہوں",
+                description: " میں ایک ہنر مند سافٹ ویئر انجینئر اور پرجوش ڈویلپر ہوں جو اختراعی حل تیار کرنے میں مہارت رکھتا ہوں۔ یہ دیکھنے کے لیے میرا کام دریافت کریں کہ میں کوڈ کے ذریعے آئیڈیاز کو کیسے زندہ کرتا ہوں"
+            }
+    
+    
+        }
+        document.addEventListener("DOMContentLoaded", function() {
+            //logo
+            document.querySelector('.logo2').innerHTML = `
+            <img src="logo.png" alt="Logo" class="logo2">
+            <h1 class = "heading2">Sana H.</h1> 
+
+        `;
+        
+        document.querySelector('#her2').innerHTML = `
+        <p>${profileData.urdu.greeting}<br>${profileData.urdu.description}</p>
+    `;
+
+    
+    document.body.innerHTML += `
+    <div class="mobile">
+    <footer>
+    <p>&copy; ${profileData.year} ${profileData.name}. ${profileData.rights}</p>
+    </footer>
+    </div>
+    `;
+        });
+        function toggleNavbar2() {
+            const navbar = document.getElementById('navbar2');
+            if (navbar) { // Ensure the element exists
+                navbar.classList.toggle('show'); // Toggle the 'show' class
+                console.log(navbar.classList.contains('show')); // Log for debugging
+            } else {
+                console.error('Navbar element not found'); // Error if navbar is not found
+            }
+        }
+        
+        // Add event listener for the menu icon
+        document.querySelector('.menu-ico').addEventListener('click', toggleNavbar2);
+        
+    </script>
+</div>
+
+
+
+
+</body>
 </html>
